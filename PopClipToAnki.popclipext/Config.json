@@ -3,10 +3,7 @@
   "name": "PopClip to Anki",
   "icon": "icon.svg",
   "description": "Send selected text to Anki via AnkiConnect.",
-  "module": {
-    "language": "javascript",
-    "scriptFile": "send-to-anki.js"
-  },
+  "module": "send-to-anki.js",
   "options": [
     {
       "identifier": "deckName",
