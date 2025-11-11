@@ -1,4 +1,5 @@
 {
+  "popclipVersion": 4150,
   "identifier": "com.example.popcliptoanki",
   "name": "PopClip to Anki",
   "icon": "icon.svg",
@@ -36,9 +37,9 @@
     {
       "identifier": "backTemplate",
       "label": "Back Template",
-      "type": "multiline",
+      "type": "string",
       "description": "Template for the back field. Use {selection} for the selected text and {source} for the detected source URL or app name.",
-      "defaultValue": "{selection}\n\n{source}"
+      "defaultValue": "{selection}\\n\\n{source}"
     },
     {
       "identifier": "additionalTags",
