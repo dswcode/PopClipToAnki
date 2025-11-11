@@ -83,28 +83,23 @@ function buildNote(input, options) {
   };
 }
 
-exports.actions = [
-  {
-    title: '发送到 Anki',
-    code: async function (input, options) {
-      options = options || popclip.options || {};
-      try {
-        var payload = buildNote(input, options);
-        var json = JSON.stringify(payload);
-        var command = "/usr/bin/env curl -sS -X POST -H 'Content-Type: application/json' -d '" + escapeShellArg(json) + "' http://127.0.0.1:8765";
-        var responseText = await popclip.shellCommand(command, { timeout: 5 });
-        if (!responseText) {
-          throw new Error('未能从 AnkiConnect 获得响应');
-        }
-        var response = JSON.parse(responseText);
-        if (response.error) {
-          throw new Error('AnkiConnect 返回错误：' + response.error);
-        }
-        popclip.showSuccess('已添加到 Anki');
-      } catch (error) {
-        popclip.showError(error.message || String(error));
-        throw error;
-      }
+function popclip(input, options) {
+  options = options || popclip.options || {};
+  try {
+    var payload = buildNote(input, options);
+    var json = JSON.stringify(payload);
+    var command = "/usr/bin/env curl -sS -X POST -H 'Content-Type: application/json' -d '" + escapeShellArg(json) + "' http://127.0.0.1:8765";
+    var responseText = popclip.shellCommand(command, { timeout: 5 });
+    if (!responseText) {
+      throw new Error('未能从 AnkiConnect 获得响应');
     }
+    var response = JSON.parse(responseText);
+    if (response.error) {
+      throw new Error('AnkiConnect 返回错误：' + response.error);
+    }
+    popclip.showSuccess('已添加到 Anki');
+  } catch (error) {
+    popclip.showError(error.message || String(error));
+    throw error;
   }
-];
+}
