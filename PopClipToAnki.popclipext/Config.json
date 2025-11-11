@@ -1,0 +1,63 @@
+{
+  "identifier": "com.example.popcliptoanki",
+  "name": "PopClip to Anki",
+  "icon": "icon.svg",
+  "description": "Send selected text to Anki via AnkiConnect.",
+  "module": "send-to-anki.js",
+  "options": [
+    {
+      "identifier": "deckName",
+      "label": "Deck Name",
+      "type": "string",
+      "description": "Target Anki deck for new notes.",
+      "defaultValue": "Default"
+    },
+    {
+      "identifier": "modelName",
+      "label": "Note Type",
+      "type": "string",
+      "description": "Anki note type (model) to use when creating notes.",
+      "defaultValue": "Basic"
+    },
+    {
+      "identifier": "frontField",
+      "label": "Front Field",
+      "type": "string",
+      "description": "Field of the note that receives the selected text.",
+      "defaultValue": "Front"
+    },
+    {
+      "identifier": "backField",
+      "label": "Back Field",
+      "type": "string",
+      "description": "Field that receives the generated back content.",
+      "defaultValue": "Back"
+    },
+    {
+      "identifier": "backTemplate",
+      "label": "Back Template",
+      "type": "string",
+      "multiline": true,
+      "description": "Template for the back field. Use {selection} for the selected text and {source} for the detected source URL or app name.",
+      "defaultValue": "{selection}\n\n{source}"
+    },
+    {
+      "identifier": "additionalTags",
+      "label": "Tags",
+      "type": "string",
+      "description": "Space separated list of tags to add to created notes.",
+      "defaultValue": "popclip"
+    },
+    {
+      "identifier": "allowDuplicate",
+      "label": "Allow Duplicates",
+      "type": "boolean",
+      "description": "Allow creating duplicate notes within the deck.",
+      "defaultValue": false
+    }
+  ],
+  "entitlements": [
+    "shell"
+  ],
+  "after": "show-result"
+}
