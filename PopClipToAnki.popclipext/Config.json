@@ -36,8 +36,7 @@
     {
       "identifier": "backTemplate",
       "label": "Back Template",
-      "type": "string",
-      "multiline": true,
+      "type": "multiline",
       "description": "Template for the back field. Use {selection} for the selected text and {source} for the detected source URL or app name.",
       "defaultValue": "{selection}\n\n{source}"
     },
