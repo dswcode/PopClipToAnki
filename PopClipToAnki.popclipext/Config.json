@@ -1,21 +1,10 @@
 {
+  "popclipVersion": 4150,
   "identifier": "com.example.popcliptoanki",
   "name": "PopClip to Anki",
   "icon": "icon.svg",
   "description": "Send selected text to Anki via AnkiConnect.",
   "module": "send-to-anki.js",
-  "actions": [
-    {
-      "identifier": "sendToAnki",
-      "title": "发送到 Anki",
-      "icon": "icon.svg"
-    }
-  ],
-  "requirements": [
-    {
-      "type": "text"
-    }
-  ],
   "options": [
     {
       "identifier": "deckName",
@@ -49,9 +38,8 @@
       "identifier": "backTemplate",
       "label": "Back Template",
       "type": "string",
-      "multiline": true,
       "description": "Template for the back field. Use {selection} for the selected text and {source} for the detected source URL or app name.",
-      "defaultValue": "{selection}\n\n{source}"
+      "defaultValue": "{selection}\\n\\n{source}"
     },
     {
       "identifier": "additionalTags",

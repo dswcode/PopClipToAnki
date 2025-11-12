@@ -19,7 +19,7 @@ PopClip 扩展，用于将选中的文字快速发送到 Anki（通过 [AnkiConn
 ## 使用
 
 1. 在任何应用中选择需要保存到 Anki 的文字，PopClip 会自动出现。
-2. 点击 “发送到 Anki” 按钮，扩展会调用 AnkiConnect 将笔记写入 Anki。
+2. 点击 “PopClip to Anki” 按钮，扩展会调用 AnkiConnect 将笔记写入 Anki。
 3. 若配置了模板，扩展会自动填充后字段内容，并附加设定的标签。
 
 ## 配置选项
