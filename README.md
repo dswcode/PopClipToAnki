@@ -34,7 +34,7 @@ PopClip 扩展，用于将选中的文字快速发送到 Anki（通过 [AnkiConn
 
 ## 工作原理
 
-扩展内部使用 JavaScript 调用 `curl` 发送 HTTP POST 请求到 `http://127.0.0.1:8765`，构造与 AnkiConnect 兼容的 `addNote` 请求体。当 AnkiConnect 返回错误时，PopClip 会直接提示错误信息，方便排查问题。
+扩展内部使用 JavaScript 调用 `curl` 发送 HTTP POST 请求到 `http://localhost:8765`，构造与 AnkiConnect 兼容的 `addNote` 请求体。当 AnkiConnect 返回错误时，PopClip 会直接提示错误信息，方便排查问题。
 
 ## 注意事项
 
